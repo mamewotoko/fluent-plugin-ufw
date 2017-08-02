@@ -1,6 +1,6 @@
 # Fluent::Plugin::Ufw
 
-A fluent plugin to parse ufw log
+A fluent plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
 
 ## Installation
 
@@ -49,6 +49,9 @@ TODO: Write usage instructions here
 ## TODO
 * add test
 * write Usage
+
+## References
+* [UFW](https://help.ubuntu.com/community/UFW)
 
 ----
 Takashi Masuyama < mamewotoko@gmail.com >  
