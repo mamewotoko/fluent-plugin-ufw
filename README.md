@@ -18,6 +18,25 @@ Or install it yourself as:
 
     $ gem install fluent-plugin-ufw
 
+## Manual installation
+
+   $ cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
+
+## fluentd config
+specify `format ufw` in fluent.config like example below.
+
+```
+<source>
+ @type tail
+ read_from_head true
+ format ufw
+ 
+ path /var/log/ufw/ufw.log*
+ pos_file /var/log/ufw/ufw.pos
+ tag ufw.combined
+</source>
+```
+
 ## Usage
 
 TODO: Write usage instructions here
