@@ -7,10 +7,9 @@ Gem::Specification.new do |s|
   s.authors     = ["Takashi Masuyama"]
   s.email       = ["mamewotoko@gmail.com"]
   s.homepage    = "http://mamewo.ddo.jp"
-  s.summary     = %q{Output filter plugin to count messages that matches specified conditions}
-  s.description = %q{Output filter plugin to count messages that matches specified conditions}
+  s.summary     = %q{Fluentd plugin to parse ufw log}
+  s.description = %q{Fluentd plugin to parse ufw log}
 
-  s.rubyforge_project = "fluent-plugin-ufw"
 # ...
   s.add_development_dependency "rake"
   s.add_runtime_dependency "fluentd"
