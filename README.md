@@ -10,8 +10,8 @@ either A or B
 ### A. build gem file and install
 
 ```
-gem build fluent-plugin-ufw.gemspec
-td-agent-gem install --local fluent-plugin-ufw.gem
+bundle exec rake build
+sudo fluent-gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
 ```
 
 ### B. copy plugin file
