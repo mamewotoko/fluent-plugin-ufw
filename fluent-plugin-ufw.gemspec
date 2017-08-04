@@ -11,5 +11,6 @@ Gem::Specification.new do |s|
   s.description = %q{Fluentd plugin to parse ufw log}
 
   s.add_development_dependency "rake"
+  s.add_development_dependency "test-unit"
   s.add_runtime_dependency "fluentd"
 end
