@@ -1,15 +1,18 @@
-# Fluent::Plugin::Ufw
+# fluent-plugin-ufw
 
 A fluent plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
 
 ## Installation
+either A or B
+
+### A. build gem file and install
 
 ```
 gem build fluent-plugin-ufw.gemspec
-gem install fluent-plugin-ufw
+td-agent-gem install --local fluent-plugin-ufw.gem
 ```
 
-## Manual installation
+### B. copy plugin file
 
 ```
 cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
@@ -33,10 +36,10 @@ specify `format ufw` in fluent.config like example below.
 ## Fields in log
 * read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Logging)
 
-
 ## TODO
 * add test
 * write Usage
+* release gem
 
 ## References
 * [UFW](https://help.ubuntu.com/community/UFW)

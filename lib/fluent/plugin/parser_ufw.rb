@@ -30,7 +30,6 @@ module Fluent
         action = m['action']
 
         record = {
-          "time" => time,
           "host" => host,
           "action" => action
         }
