@@ -1,4 +1,6 @@
-# fluent-plugin-ufw
+fluent-plugin-ufw
+==================
+[![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw)
 
 A fluent plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
 
