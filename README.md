@@ -2,22 +2,12 @@ fluent-plugin-ufw
 ==================
 [![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw)
 
-A fluent plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
+A [fluent](https://www.fluentd.org/) plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
 
 ## Installation
-either A or B
-
-### A. build gem file and install
 
 ```
-bundle exec rake build
-sudo fluent-gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
-```
-
-### B. copy plugin file
-
-```
-cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
+gem install fluent-plugin-ufw
 ```
 
 ## fluentd config
@@ -29,7 +19,7 @@ specify `format ufw` in fluent.config like example below.
  read_from_head true
  format ufw
  
- path /var/log/ufw/ufw.log*
+ path /var/log/ufw/ufw.log
  pos_file /var/log/ufw/ufw.pos
  tag ufw.combined
 </source>
@@ -45,8 +35,20 @@ bundle install
 bundle exec rake
 ```
 
-## TODO
-* release gem
+## Install for development
+### A. build gem file and install
+
+```
+bundle exec rake build
+gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
+```
+
+### B. copy plugin file
+
+```
+cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
+```
+
 
 ## License
 
