@@ -14,7 +14,3 @@ rvm:
 
 gemfile:
   - Gemfile
-
-install:
-  - bundle exec rake build
-  - sudo fluent-gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
