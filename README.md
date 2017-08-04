@@ -44,7 +44,6 @@ bundler exec rake test
 ```
 
 ## TODO
-* run test
 * release gem
 
 ## References
@@ -53,4 +52,3 @@ bundler exec rake test
 ----
 Takashi Masuyama < mamewotoko@gmail.com >  
 http://mamewo.ddo.jp/
-
