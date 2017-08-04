@@ -34,7 +34,7 @@ specify `format ufw` in fluent.config like example below.
 ```
 
 ## Fields in log
-* read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Logging)
+* read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Interpreting_Log_Entries)
 
 ## Test
 
