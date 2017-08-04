@@ -39,8 +39,8 @@ specify `format ufw` in fluent.config like example below.
 ## Test
 
 ```
-bundler install
-bundler exec rake test
+bundle install
+bundle exec rake
 ```
 
 ## TODO
