@@ -36,9 +36,15 @@ specify `format ufw` in fluent.config like example below.
 ## Fields in log
 * read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Logging)
 
+## Test
+
+```
+bundler install
+bundler exec rake test
+```
+
 ## TODO
-* add test
-* write Usage
+* run test
 * release gem
 
 ## References

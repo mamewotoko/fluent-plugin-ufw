@@ -1,9 +1,10 @@
 require "test_helper"
 
-class UFWTest < ::Test::Unit::TestCase
+class UFWTest < Test::Unit::TestCase
   def setup
     Fluent::Test.setup
-    @parser = Fluent::Test::Driver::Parser.new(Fluent::TextParser::UFWParser)
+    
+    @parser = Fluent::Test::ParserTestDriver.new(Fluent::TextParser::UFWParser).configure({})
     @expected = {
       'host' => 'hostnm',
       'action' => 'UFW BLOCK',
