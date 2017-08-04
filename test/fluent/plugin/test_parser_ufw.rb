@@ -23,7 +23,7 @@ class UFWTest < ::Test::Unit::TestCase
       'SPT' => 7777,
       'DPT' => 49338,
       'WINDOW' => 0,
-      'RES' => '0x00'
+      'RES' => '0x00',
       'RST' => nil,
       'URGP' => 0
     }

@@ -1,4 +1,4 @@
-require 'fluent/parser'
+require 'fluent/plugin/parser'
 
 module Fluent
   class TextParser
