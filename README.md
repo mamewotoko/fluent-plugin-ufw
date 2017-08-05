@@ -29,18 +29,32 @@ specify `format ufw` in fluent.config like example below.
 * read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Interpreting_Log_Entries)
 
 ## Test
-### Using installed fluetntd
+### A. Using installed fluetntd
 ```
 bundle install
 bundle exec rake
 ```
 
-### Multiple version of fluentd
+### B. Multiple version of fluentd with appraisal tool
 
 ```
 bundle install
 appraisal install
 appraisal rake test
+```
+
+### C. Install gem and run with fluentd as docker container
+
+Run for fluentd version specified in Dockerfile
+
+```
+sh run_docker_test.sh
+```
+
+Run for multiple fluentd version
+
+```
+sh run_docker_test.sh
 ```
 
 ## Install for development
@@ -56,7 +70,6 @@ gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
 ```
 cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
 ```
-
 
 ## License
 
