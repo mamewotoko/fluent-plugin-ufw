@@ -15,6 +15,7 @@ module Fluent
         # TimeParser class is already given. It takes a single argument as the time format
         # to parse the time string with.
         @time_parser = TimeParser.new(@time_format)
+        @mutex = Mutex.new
       end
 
       def parse(text)
@@ -25,7 +26,7 @@ module Fluent
           return
         end
         time = m['time']
-        time = @time_parser.parse(time)
+        time = @mutex.synchronize { @time_parser.parse(time) }
         host = m['host']
         action = m['action']
 
@@ -39,11 +40,8 @@ module Fluent
           key, value = pair.split('=', 2)
           record[key] = value
         end
-
-#        record.each { |key,value|
-#          $log.info "#{key} #{value}"
-#        }
-        time, record = convert_values(time, record)
+        record['time'] = m['time'] if @keep_time_key
+        
         yield time, record
       end
     end
