@@ -1,6 +1,6 @@
 fluent-plugin-ufw
 ==================
-[![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw)
+[![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw) [![Gem Version](https://badge.fury.io/rb/fluent-plugin-ufw.svg)](https://badge.fury.io/rb/fluent-plugin-ufw)
 
 A [fluent](https://www.fluentd.org/) plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
 
