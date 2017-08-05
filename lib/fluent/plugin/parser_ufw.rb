@@ -4,7 +4,7 @@ module Fluent
   class TextParser
     class UFWParser < Parser
       # Register this parser as "time_key_value"
-      Plugin.register_parser("ufw", self)
+      Fluent::Plugin.register_parser("ufw", self)
 
       def configure(conf)
         super

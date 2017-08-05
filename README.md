@@ -29,10 +29,18 @@ specify `format ufw` in fluent.config like example below.
 * read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Interpreting_Log_Entries)
 
 ## Test
-
+### Using installed fluetntd
 ```
 bundle install
 bundle exec rake
+```
+
+### Multiple version of fluentd
+
+```
+bundle install
+appraisal install
+appraisal rake test
 ```
 
 ## Install for development
