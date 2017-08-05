@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.license       = "Apache-2.0"
 
-  s.add_development_dependency "rake"
-  s.add_development_dependency "test-unit"
-  s.add_development_dependency "appraisal", [">= 0.12.21"]
+  s.add_development_dependency "rake", [">= 0.9.2"]
+  s.add_development_dependency "test-unit", [">= 1.2.3"]
+  s.add_development_dependency "appraisal" 
 
-  s.add_runtime_dependency "fluentd"
+  s.add_runtime_dependency "fluentd", [">= 0.12.21"]
 end
