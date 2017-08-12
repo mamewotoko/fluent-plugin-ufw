@@ -1,5 +1,6 @@
 FROM fluent/fluentd:v0.14.20
 
+RUN bundle exec rake build
 COPY pkg/fluent-plugin-ufw-*.gem .
 RUN gem install --local fluent-plugin-ufw-*.gem
 
