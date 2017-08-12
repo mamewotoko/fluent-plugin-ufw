@@ -1,4 +1,7 @@
+sudo: required
 language: ruby
+services:
+  - docker
 before_install:
   - gem update bundler
 
@@ -13,3 +16,6 @@ rvm:
 gemfile:
   - Gemfile
   - Gemfile.fluentd.0.12
+
+after_script:
+  - sh run_docker_test.sh
