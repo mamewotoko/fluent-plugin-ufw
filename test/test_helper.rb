@@ -3,3 +3,4 @@ require 'fluent/plugin/parser_ufw'
 
 require 'test/unit'
 require 'fluent/test'
+require 'fluent/test/driver/parser'
