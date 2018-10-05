@@ -19,5 +19,6 @@ gemfile:
 
 after_script:
   - docker-compose build
-  - docker-compose run builder ./test.sh
+  - docker-compose run builder ./run_appraisal.sh
+
   
