@@ -29,6 +29,7 @@ specify `format ufw` in fluent.config like example below.
 
 ## Test
 ### A. Using installed fluetntd
+
 ```
 bundle install
 bundle exec rake
@@ -70,6 +71,13 @@ gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
 cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
 ```
 
+## Vagrant
+Vagranfile is to run virtual box vm to build and test gem
+
+```
+vagrant up
+```
+
 ## License
 
 ```
@@ -90,7 +98,9 @@ limitations under the License.
 
 ## References
 * [UFW](https://help.ubuntu.com/community/UFW)
+* [test-unit](https://test-unit.github.io/)
+* [thoughtbot/appraisal](https://github.com/thoughtbot/appraisal)
 
 ----
 Takashi Masuyama < mamewotoko@gmail.com >  
-http://mamewo.ddo.jp/
+https://mamewo.ddo.jp/

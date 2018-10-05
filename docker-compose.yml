@@ -1,6 +1,8 @@
 version: '2'
 
 services:
-  fluent-plugin-ufw:
-    build: .
-
+  builder:
+    build:
+      context: .
+    volumes:
+      - .:/work

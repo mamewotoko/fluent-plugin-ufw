@@ -1,10 +1,11 @@
-FROM fluent/fluentd:v0.14.20
+FROM ubuntu:16.04
+LABEL maintainer "Takashi Masuyama <mamewotoko@gmail.com>"
 
-ARG UFW_VERSION=0.0.4
+RUN apt-get update && apt-get upgrade -y && apt-get install -y ruby git ruby-bundler ruby-dev curl make gcc
+# install fluentd (gem)
+RUN curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sed 's:sudo ::g' | sh
 
-COPY pkg/fluent-plugin-ufw-${UFW_VERSION}.gem /tmp/
-RUN gem install --local /tmp/fluent-plugin-ufw-${UFW_VERSION}.gem
+RUN mkdir work
 
-COPY docker/etc/fluent.conf /fluentd/etc/
-RUN mkdir /var/log/ufw/
-COPY docker/var/log/ufw/ufw.log /var/log/ufw/
+WORKDIR work
+VOLUME work
