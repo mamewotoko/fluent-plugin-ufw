@@ -45,17 +45,18 @@ appraisal rake test
 
 ### C. Install gem and run with fluentd as docker container
 
-Run for fluentd version specified in Dockerfile
+Build image for fluentd version specified in Dockerfile
 
 ```
-sh run_docker_test.sh
+docker-compose build
 ```
 
-Run for multiple fluentd version
+Then, run test run_test.sh or run_appraisal.sh
 
 ```
-sh run_docker_test.sh
+docker-compose run builder ./run_test.sh
 ```
+
 
 ## Install for development
 ### A. build gem file and install
