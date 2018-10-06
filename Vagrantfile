@@ -22,6 +22,10 @@ Vagrant.configure(2) do |config|
      sudo apt-get update
      sudo apt-get install -y ruby git ruby-bundler ruby-dev
      curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sh
+
+    cd /vagrant
+    bundle exec rake build
+    gem install --local pkg/fluent-plugin-ufw-0.0.4.gem
   SHELL
 end
 
