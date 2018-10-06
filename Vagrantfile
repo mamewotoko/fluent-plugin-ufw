@@ -7,7 +7,7 @@
 # you're doing.
 Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/xenial64'
-  config.vm.network 'private_network', ip: '192.168.33.10'
+  # config.vm.network 'private_network', ip: '192.168.33.10'
   config.vm.boot_timeout = 60 * 15
 
   config.vm.provider 'virtualbox' do |vb|
@@ -23,6 +23,7 @@ Vagrant.configure(2) do |config|
      curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sh
 
     cd /vagrant
+    bundle install
     bundle exec rake build
     gem install --local pkg/fluent-plugin-ufw-0.0.4.gem
   SHELL

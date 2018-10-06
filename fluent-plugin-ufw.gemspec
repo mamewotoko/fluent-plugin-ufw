@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'fluentd', ['>= 0.14.0', '< 2']
 
+  s.add_development_dependency 'simplecov'
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'rake', ['>= 0.9.2']
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'rubocop-checkstyle_formatter'
-  s.add_development_dependency 'test-unit', ['>= 1.2.3']
+  s.add_development_dependency 'test-unit', ['>= 2.4.3']
 end
