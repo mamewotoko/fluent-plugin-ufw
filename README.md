@@ -28,14 +28,28 @@ specify `format ufw` in fluent.config like example below.
 * read [Interpreting Log Entries of UFW](https://help.ubuntu.com/community/UFW#Interpreting_Log_Entries)
 
 ## Test
-### A. Using installed fluetntd
+### Overview
+
+Test tool
+
+* a. unit-test
+* b. appraisal
+* c. manual
+
+Test environment
+
+* A. local pc
+* B. Vagrant VirtualBox VM (`ubuntu/xenial64`)
+* C. Docker
+
+### a. unit-test
 
 ```
 bundle install
 bundle exec rake
 ```
 
-### B. Multiple version of fluentd with appraisal tool
+### b. Multiple version of fluentd with appraisal tool
 
 ```
 bundle install
@@ -43,7 +57,77 @@ appraisal install
 appraisal rake test
 ```
 
-### C. Install gem and run with fluentd as docker container
+### c. Install gem as fluentd plugin (manual test)
+1. build and install gem
+
+```
+bundle exec rake build
+gem install --local pkg/fluent-plugin-ufw-0.0.4.gem
+```
+
+2. write td-agent.conf
+
+sample
+
+```
+<source>
+  @type tail
+  time_key time
+  read_from_head true
+  format ufw
+ 
+  path /var/log/ufw.log
+  pos_file /var/log/td-agent/ufw.pos
+  tag ufw.combined
+</source>
+
+<match ufw.*>
+  @type file
+  path /var/log/td-agent/ufw.output
+  append true
+  flush_interval 5s
+  time_slice_format %Y%m%d
+  time_slice_wait 10m
+  time_format %Y%m%dT%H%M%S%z
+</match>
+```
+
+3. restart td-agent and check output
+
+### a. local pc (ubuntu/debian)
+
+```
+sudo apt-get update
+sudo apt-get install -y ruby git ruby-bundler ruby-dev
+curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sh
+
+# clone this source using git
+
+bundle exec rake build
+gem install --local pkg/fluent-plugin-ufw-0.0.4.gem
+
+```
+
+### b. Vagrant
+
+[Vagrantfile](Vagrantfile) is to run virtual box vm to build and test gem
+
+1. prepare 
+
+```
+vagrant up
+```
+
+2. login to vm
+
+```
+vagrant ssh
+cd /vagrant
+```
+
+3. run test
+
+### c. docker container
 
 Build image for fluentd version specified in Dockerfile
 
@@ -55,28 +139,6 @@ Then, run test run_test.sh or run_appraisal.sh
 
 ```
 docker-compose run builder ./run_test.sh
-```
-
-
-## Install for development
-### A. build gem file and install
-
-```
-bundle exec rake build
-gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
-```
-
-### B. copy plugin file
-
-```
-cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
-```
-
-## Vagrant
-Vagranfile is to run virtual box vm to build and test gem
-
-```
-vagrant up
 ```
 
 ## License
