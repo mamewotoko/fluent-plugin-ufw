@@ -1,4 +1,4 @@
-fluent-plugin-ufw [![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw) [![Gem Version](https://badge.fury.io/rb/fluent-plugin-ufw.svg)](https://badge.fury.io/rb/fluent-plugin-ufw)
+fluent-plugin-ufw [![Build Status](https://travis-ci.org/mamewotoko/fluent-plugin-ufw.svg?branch=master)](https://travis-ci.org/mamewotoko/fluent-plugin-ufw) [![Gem Version](https://badge.fury.io/rb/fluent-plugin-ufw.svg)](https://badge.fury.io/rb/fluent-plugin-ufw) [![Maintainability](https://api.codeclimate.com/v1/badges/2806b8f5f36bcaaf182e/maintainability)](https://codeclimate.com/github/mamewotoko/fluent-plugin-ufw/maintainability)
 ==================
 
 A [fluent](https://www.fluentd.org/) plugin to parse [ufw](https://help.ubuntu.com/community/UFW) log
@@ -144,7 +144,7 @@ docker-compose run builder ./run_test.sh
 ## License
 
 ```
-Copyright (c) 2017 Takashi Masuyama. All rights reserved.
+Copyright (c) 2017-2018 Takashi Masuyama. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

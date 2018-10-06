@@ -1,9 +1,4 @@
 TODO
 ====
-* add lint
-  * rubocop 
-* build gem using docker
-* test using docker
-  * method A
-  * method B
-  * method C
+* test with fluentd docker image
+
