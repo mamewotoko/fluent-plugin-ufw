@@ -32,7 +32,7 @@ specify `format ufw` in fluent.config like example below.
 
 Test tool
 
-* a. unit-test
+* a. test-unit
 * b. appraisal
 * c. manual
 
@@ -42,7 +42,7 @@ Test environment
 * B. Vagrant VirtualBox VM (`ubuntu/xenial64`)
 * C. Docker
 
-### a. unit-test
+### a. test-unit
 
 ```
 bundle install
