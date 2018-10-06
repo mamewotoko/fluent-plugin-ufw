@@ -1,7 +1,7 @@
-require 'fluent/parser'
+require 'fluent/plugin/parser'
 
 module Fluent
-  class TextParser
+  module Plugin
     class UFWParser < Parser
       # Register this parser as "time_key_value"
       Fluent::Plugin.register_parser("ufw", self)
@@ -41,7 +41,7 @@ module Fluent
           record[key] = value
         end
         record['time'] = m['time'] if @keep_time_key
-        
+
         yield time, record
       end
     end

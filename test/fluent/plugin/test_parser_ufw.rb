@@ -3,8 +3,8 @@ require 'test_helper'
 class UFWTest < Test::Unit::TestCase
   def setup
     Fluent::Test.setup
-    
-    @parser = Fluent::Test::ParserTestDriver.new(Fluent::TextParser::UFWParser).configure({})
+
+    @parser = Fluent::Test::Driver::Parser.new(Fluent::Plugin::UFWParser).configure({})
     @expected = {
       'host' => 'hostnm',
       'action' => 'UFW BLOCK',
@@ -38,5 +38,5 @@ class UFWTest < Test::Unit::TestCase
       p record.to_json
     }
   end
-    
+
 end
