@@ -29,6 +29,7 @@ specify `format ufw` in fluent.config like example below.
 
 ## Test
 ### A. Using installed fluetntd
+
 ```
 bundle install
 bundle exec rake
@@ -44,17 +45,18 @@ appraisal rake test
 
 ### C. Install gem and run with fluentd as docker container
 
-Run for fluentd version specified in Dockerfile
+Build image for fluentd version specified in Dockerfile
 
 ```
-sh run_docker_test.sh
+docker-compose build
 ```
 
-Run for multiple fluentd version
+Then, run test run_test.sh or run_appraisal.sh
 
 ```
-sh run_docker_test.sh
+docker-compose run builder ./run_test.sh
 ```
+
 
 ## Install for development
 ### A. build gem file and install
@@ -68,6 +70,13 @@ gem install --local pkg/fluent-plugin-ufw-0.0.1.gem
 
 ```
 cp lib/fluent/plugin/parser_ufw.rb /etc/fluent/plugin/
+```
+
+## Vagrant
+Vagranfile is to run virtual box vm to build and test gem
+
+```
+vagrant up
 ```
 
 ## License
@@ -90,7 +99,9 @@ limitations under the License.
 
 ## References
 * [UFW](https://help.ubuntu.com/community/UFW)
+* [test-unit](https://test-unit.github.io/)
+* [thoughtbot/appraisal](https://github.com/thoughtbot/appraisal)
 
 ----
 Takashi Masuyama < mamewotoko@gmail.com >  
-http://mamewo.ddo.jp/
+https://mamewo.ddo.jp/

@@ -16,5 +16,5 @@ gemfile:
   - Gemfile
 
 after_script:
-  - bundle exec rake build
-  - sh run_docker_test.sh
+  - docker-compose build
+  - docker-compose run builder ./run_appraisal.sh

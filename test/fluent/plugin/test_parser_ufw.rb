@@ -35,6 +35,7 @@ class UFWTest < Test::Unit::TestCase
       expected_time = Time.strptime('1/Aug 19:03:54', '%d/%b %H:%M:%S')
       assert_equal(expected_time.to_i, time.to_i)
       assert_equal(@expected, record)
+      p record.to_json
     }
   end
 
