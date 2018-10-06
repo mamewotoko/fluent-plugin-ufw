@@ -19,5 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'rake', ['>= 0.9.2']
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'rubocop-checkstyle_formatter'
   s.add_development_dependency 'test-unit', ['>= 1.2.3']
 end
