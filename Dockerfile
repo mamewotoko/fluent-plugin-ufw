@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y ruby git ruby-bun
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-xenial-td-agent3.sh | sed 's:sudo ::g' | sh
 
 
-RUN mkdir work
+RUN mkdir /work
 
-WORKDIR work
-VOLUME work
+WORKDIR /work
+VOLUME /work
